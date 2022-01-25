@@ -7,6 +7,9 @@ MIT
 @angular/core
 MIT
 
+@angular/forms
+MIT
+
 @angular/platform-browser
 MIT
 
@@ -63,7 +66,15 @@ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
+ngx-bootstrap/component-loader
+
 ngx-bootstrap/datepicker
+
+ngx-bootstrap/dropdown
+
+ngx-bootstrap/positioning
+
+ngx-bootstrap/utils
 
 rxjs
 Apache-2.0
