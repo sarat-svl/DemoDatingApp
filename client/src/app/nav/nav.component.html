@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark ms-auto">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Demo Dating App</a>
+    <a class="navbar-brand" routerLink="/" routerLinkActive="active">Demo Dating App</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -15,13 +15,13 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav me-auto mr-auto" *ngIf="accountService.currentUser$ | async ">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Matches</a>
+          <a class="nav-link" aria-current="page" routerLink="/members" routerLinkActive="active">Matches</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Lists</a>
+          <a class="nav-link" routerLink="/lists" routerLinkActive="active">Lists</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link">Messages</a>
+          <a class="nav-link" routerLink="/messages" routerLinkActive="active">Messages</a>
         </li>
       </ul>
 
@@ -54,7 +54,7 @@
           name="password"
           [(ngModel)]="model.password"
           class="form-control me-auto"
-          type="text"
+          type="password"
           placeholder="Password"
           aria-label="password"
         />
