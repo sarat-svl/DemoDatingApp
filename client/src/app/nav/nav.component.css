@@ -1,0 +1,7 @@
+.navbar-nav > li{
+    padding-left:30px;
+    padding-right:30px;
+  }
+.dropdown-toggle, .dropdown-item {
+  cursor: pointer;
+}
