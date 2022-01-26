@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark ms-auto">
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary ms-auto">
   <div class="container-fluid">
     <a class="navbar-brand" routerLink="/" routerLinkActive="active">Demo Dating App</a>
     <button
@@ -13,21 +13,23 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav me-auto mr-auto" *ngIf="accountService.currentUser$ | async ">
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" routerLink="/members" routerLinkActive="active">Matches</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/lists" routerLinkActive="active">Lists</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/messages" routerLinkActive="active">Messages</a>
-        </li>
+      <ul class="navbar-nav me-auto mr-auto">
+        <ng-container *ngIf="accountService.currentUser$ | async ">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" routerLink="/members" routerLinkActive="active">Matches</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/lists" routerLinkActive="active">Lists</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/messages" routerLinkActive="active">Messages</a>
+          </li>
+        </ng-container>
       </ul>
-
-      <div class="dropdown" dropdown *ngIf="accountService.currentUser$ | async">
+      
+      <div class="dropdown" dropdown *ngIf="(accountService.currentUser$ | async) as user">
           <a class="dropdown-toggle text-light" dropdownToggle>
-              Welcome user
+              Welcome {{ user.userName | titlecase }}
           </a>
           <div class="dropdown-menu" *dropdownMenu>
               <a class="dropdown-item">Edit profile</a>
@@ -45,7 +47,7 @@
         <input
           name="username"
           [(ngModel)]="model.username"
-          class="form-control me-auto"
+          class="form-control me-2"
           type="text"
           placeholder="Username"
           aria-label="username"
@@ -53,7 +55,7 @@
         <input
           name="password"
           [(ngModel)]="model.password"
-          class="form-control me-auto"
+          class="form-control me-2"
           type="password"
           placeholder="Password"
           aria-label="password"
